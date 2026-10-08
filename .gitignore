@@ -1,0 +1,24 @@
+target/
+*.class
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Micronaut / AOT
+.micronaut/
