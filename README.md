@@ -81,16 +81,27 @@ Com a aplicação em execução:
 
 ## Endpoints
 
-| Método | Rota      | Descrição          |
-|--------|-----------|---------------------|
-| POST   | `/tasks`  | Cria uma nova tarefa |
+| Método | Rota            | Descrição                          |
+|--------|------------------|--------------------------------------|
+| POST   | `/tasks/create`  | Cria uma nova tarefa                 |
+| POST   | `/tasks`         | Busca uma tarefa pelo `id` (no body) |
+| GET    | `/tasks`         | Lista todas as tarefas               |
 
-Exemplo de requisição:
+Exemplos de requisição:
 
 ```bash
-curl -X POST http://localhost:8080/tasks \
+# Criar tarefa
+curl -X POST http://localhost:8080/tasks/create \
   -H "Content-Type: application/json" \
   -d '{"title": "Estudar Micronaut", "description": "Praticar arquitetura hexagonal"}'
+
+# Buscar tarefa por id
+curl -X POST http://localhost:8080/tasks \
+  -H "Content-Type: application/json" \
+  -d '{"id": "coloque-o-uuid-aqui"}'
+
+# Listar todas as tarefas
+curl http://localhost:8080/tasks
 ```
 
 ## Migrações
