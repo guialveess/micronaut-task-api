@@ -7,17 +7,16 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Serdeable
-public record CreateTaskResponseDto(
+public record TaskResponseDto(
         UUID id,
         String title,
         String description,
         LocalDateTime createdAt,
         boolean done
-
 ) {
 
-    public static CreateTaskResponseDto from(Task task) {
-        return new CreateTaskResponseDto(task.getId(), task.getTitle(), task.getDescription(),
+    public static TaskResponseDto from(Task task) {
+        return new TaskResponseDto(task.getId(), task.getTitle(), task.getDescription(),
                 task.getCreatedAt(), task.isDone());
     }
 }
